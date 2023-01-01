@@ -16,7 +16,7 @@ def upload_video():
     file.save(os.path.join('static/', filename))
     return render_template('upload.html', filename = filename)
 
-@app.route('/display/')
+@app.route('/display/<filename>')
 def display_video(filename):
     return redirect(url_for('upload.html', filename = filename))
 
